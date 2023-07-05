@@ -10,5 +10,6 @@ namespace ConsoleApp1.Models
     {
         public int CourseId { get; set; }
         public string CourseName { get; set; }
+
     }
 }

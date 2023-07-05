@@ -64,6 +64,7 @@ class Program
             stdAddress.Address1 = "direccion 1";
             stdAddress.Address2 = "direccion 2";
             stdAddress.StudentID = std.StudentId;
+            //stdAddress.StudentID = int.Parse("b"); //error al validar el id del estudiante 
             stdAddress.City = "gye";
             stdAddress.State = "ecu";
 
@@ -121,33 +122,34 @@ class Program
 
     }
 
-    public static void consultarDireccion2()
+   public static void consultarDireccion2()
     {
         Console.WriteLine("Consultar direccion por Id, metodo 2");
-        
+
         SchoolContext context = new SchoolContext();
         StudentAddress address = new StudentAddress();
-        address = context.StudentAddresses
-            .Single(x => x.StudentID == 16);
-           
+       /* address = context.StudentAddresses
+            .Single(x => x.StudentID == 16);*/
 
-        context.Entry(address)
+
+       /* context.Entry(address)
             .Reference(x => x.Student)
             .Load();
+       */
 
-        /*
-        context.Entry(address)
+        /*context.Entry(address)
           .Collection(x => x.Student)
           .Load();
         */
 
-        Console.WriteLine("Codigo: " + address.Student.StudentId +
+        /*Console.WriteLine("Codigo: " + address.Student.StudentId +
                 " Nombre: " + address.Student.Name +
                 " Direccion: " + address.Address1);
-
-
+        */
     }
+    
     //agregar estudiante
+
     public static void agregarEstudiante()
     {
         Console.WriteLine("Metodo agregar estudiante");

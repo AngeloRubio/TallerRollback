@@ -35,7 +35,7 @@ namespace ConsoleApp1.Migrations
 
                     b.HasKey("CourseId");
 
-                    b.ToTable("Courses");
+                    b.ToTable("Courses", (string)null);
                 });
 
             modelBuilder.Entity("ConsoleApp1.Models.Student", b =>
@@ -52,7 +52,7 @@ namespace ConsoleApp1.Migrations
 
                     b.HasKey("StudentId");
 
-                    b.ToTable("Students");
+                    b.ToTable("Students", (string)null);
                 });
 
             modelBuilder.Entity("ConsoleApp1.Models.StudentAddress", b =>
@@ -78,7 +78,7 @@ namespace ConsoleApp1.Migrations
 
                     b.HasKey("StudentID");
 
-                    b.ToTable("StudentAddresses");
+                    b.ToTable("StudentAddresses", (string)null);
                 });
 
             modelBuilder.Entity("ConsoleApp1.Models.StudentAddress", b =>
