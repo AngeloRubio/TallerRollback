@@ -23,9 +23,29 @@ namespace ConsoleApp1.Models
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            builder.Entity<StudentAddress>().HasKey(v => v.StudentID);
-            
+
+            builder.Entity<StudentAddress>(entity =>
+            {
+                entity.HasKey(v => v.StudentID);
+                // Otras configuraciones de la entidad, si las hay
+
+                // Agregar otra condición
+                entity.Property(v => v.Address1).IsRequired();
+            });
+
+            builder.Entity<Course>(entity =>
+            {
+                entity.HasKey(c => c.CourseId);
+                entity.Property(c => c.CourseName).IsRequired();
+
+                entity.HasOne(c => c.Student)
+                     .WithMany(s => s.Courses)
+                     .HasForeignKey(c => c.StudentId)
+                     .IsRequired();
+            });
         }
+
+
 
     }
 

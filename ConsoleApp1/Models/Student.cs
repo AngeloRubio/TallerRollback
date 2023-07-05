@@ -11,5 +11,7 @@ namespace ConsoleApp1.Models
         public int StudentId { get; set; }
         public string Name { get; set; }
         public StudentAddress StudentAddress { get; set; }
+
+        public List<Course> Courses { get; set; }
     }
 }
