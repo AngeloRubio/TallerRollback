@@ -60,7 +60,7 @@ class Program
         try
         {
             std.Name = "Karina";
-            context.Students.Add(std);
+            
             context.SaveChanges();
 
             stdAddress.Address1 = "direccion 1";
@@ -72,6 +72,7 @@ class Program
             Course course = new Course();
             course.CourseName = "DAWA";
 
+            context.Students.Add(std);
             context.Courses.Add(course);
             context.StudentAddresses.Add(stdAddress);
 
@@ -228,20 +229,6 @@ class Program
             Console.WriteLine("Codigo: " + item.StudentId + " Nombre: " + item.Name);
         }
 
-
-        /*
-        var query = context.Students.GroupBy( s => s.Name) 
-        .Select(g => new
-        {
-            Nombre = g.Key,
-            Cantidad = g.Count()
-        }). ToList();
-
-        foreach (var result in query)
-        {
-            Console.WriteLine($"Nombre: {result.Nombre}, Cantidad: {result.Cantidad}");
-        }
-        */
 
 
 
