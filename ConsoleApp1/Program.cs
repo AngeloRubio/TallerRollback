@@ -20,7 +20,7 @@ class Program
         //consultarDireccion();
         //consultarDireccion2();
         //AgregarCurso();
-        ConsultarClases();
+        //ConsultarClases();
     }
 
     public static void guardarEstudianteYdireccion()
@@ -69,6 +69,10 @@ class Program
             stdAddress.City = "gye";
             stdAddress.State = "ecu";
 
+            Course course = new Course();
+            course.CourseName = "DAWA";
+
+            context.Courses.Add(course);
             context.StudentAddresses.Add(stdAddress);
 
             context.SaveChanges();
